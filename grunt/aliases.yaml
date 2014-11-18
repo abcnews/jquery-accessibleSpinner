@@ -1,0 +1,18 @@
+default:
+ - 'dev'
+ - 'connect:dev'
+ - 'watch'
+
+dev:
+ - 'clean'
+ - 'jshint:js'
+ - 'browserify:dev'
+ - 'copy:static'
+
+build:
+ - 'dev'
+ - 'version' # adds version number to the JS files in build
+ - 'browserify:prod'
+ - 'uglify:prod'
+ - 'copy:static'
+ - 'copy:build'

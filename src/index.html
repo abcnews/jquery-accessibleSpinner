@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>accessible-spinner</title>
+	<link rel="stylesheet" href="demo.css">
+	<script src="scripts/accessible-spinner.js"></script>
+</head>
+<body>
+
+<h1>Test Page</h1>
+<p>This is a demo of the accessible-spinner plugin. It won't look anything like a spinner but it should give the idea.</p>
+<p>Take a look at the <a href="demo.js">JavaScript managing the spinners</a>.</p>
+<hr />
+
+<h2>Content loaded immediately (with no alert)</h2>
+<div id="immediate"></div>
+<p>This is some more content</p>
+<hr/>
+
+<h2>Content loaded by user (with alert)</h2>
+<p><a href="#additional" id="moreContentLink">Load additional content</a>.</p>
+<div id="additional"></div>
+<p>More content.</p>
+<hr/>
+
+<h2>Immediate and then refresh</h2>
+<p><strong>This content is loaded immediately (with no alert) and then can be refreshed by the user (where we do need to alert)</strong></p>
+<a href="#immediate_refresh" id="immediate_refresh_link">Refresh</a>
+<div id="immediate_refresh"></div>
+<hr/>
+
+<script src="https://rawgit.com/ded/domready/v0.3.0/ready.min.js"></script>
+<!-- note demo is being loaded before JQuery-->
+<script src="demo.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>

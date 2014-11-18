@@ -1,0 +1,16 @@
+body {
+    font-size: 14px;
+}
+
+/* Note that this will look nothing like a spinner - we'll leave the styling up to you */
+
+.spinner {
+    background-color: #f5f5f5;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}
+.accessibility {
+    color: #ccc;
+    font-size: 10px;
+}
