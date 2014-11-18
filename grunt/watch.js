@@ -9,11 +9,11 @@ module.exports = {
 	},
 	"js": {
 		"files": "src/scripts/**/*",
-		"tasks": ["jshint:js", "browserify:dev"],
+		"tasks": ["jshint:js"],
 		"interrupt": true
 	},
 	"copy": {
-		"files": ["src/**/*", "!src/scripts/*"],
+		"files": ["src/**/*"],
 		"tasks": "copy:dev",
 		"interrupt": true
 	},

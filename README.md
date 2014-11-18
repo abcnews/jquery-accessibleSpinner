@@ -24,19 +24,20 @@ presentation. You'll want to do your own styling.
 
 ## Getting started
 
-AccessibleSpinner can be used in any browserify project out of the box. Just `require()` it and then call the install
-method before using.
+AccessibleSpinner can be used in any browserify or AMD project out of the box. Just `require()` it.
+
+For global browser environments, you can use add one of the JavaScript files in the `dist` folder to your page.
+
+If JQuery isn't available when the AccessibleSpinner script is loaded, don't sweat it. Just call installPlugin() when
+you're ready.
 
 	AccessibleSpinner.installPlugin();
-
-For global browser environments, you can use add one of the JavaScript files in the `dist` folder to your page. You'll
-need to make sure the script is added after JQuery.
 
 **Note:** No styling has been included in this library. It's up to you to style the spinner however you want.
 
 ### Usage
 
-Once you've added the script (and installed it if using Browserify) you can instantiate the spinner like so:
+Once you've added the script (and installed it if you need to) you can instantiate the spinner like so:
 
 	var spinner1 = $('#loadHere').spinner();
 	var spinner2 = $('#loadHere').spinner({
@@ -68,7 +69,7 @@ Once you've added the script (and installed it if using Browserify) you can inst
 		// Whether or not to do the announcement (i.e. whether or not to use the aria-live region).
 	};
 
-** Note about doAnnouncement:** When content is being loaded immediately and in multiple places, it could be
+**Note about doAnnouncement:** When content is being loaded immediately and/or in multiple places, it would probably be
 confusing to announce it. It's generally better to do announcements when content is loaded in response to a user action.
 
 ### Methods
