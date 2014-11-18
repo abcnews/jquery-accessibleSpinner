@@ -7,9 +7,9 @@ dev:
  - 'clean'
  - 'jshint:js'
  - 'copy:dev'
+ - 'string-replace:version'
 
 build:
  - 'dev'
- - 'version'
  - 'uglify:prod'
  - 'copy:build'

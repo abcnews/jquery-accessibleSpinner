@@ -1,6 +1,6 @@
 {
   "name": "accessible-spinner",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A loading spinner with accessibility features.",
   "author": {
     "name": "chappellp8b",
@@ -16,7 +16,7 @@
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-version": "~0.3.0",
+    "grunt-string-replace": "^1.0.0",
     "load-grunt-config": "~0.9.2",
     "time-grunt": "~0.3.2"
   }

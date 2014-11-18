@@ -2,7 +2,7 @@
  * accessible-spinner
  * A simple JQuery plugin that replaces content with a spinner and includes some accessibility features.
  *
- * @version development
+ * @version current_version
  * @author Peter Chappell <chappell.peter@abc.net.au>
  * */
 
@@ -28,7 +28,7 @@
 		this.init(element, options);
 	}
 
-	AccessibleSpinner.VERSION = '0.0.1';
+	AccessibleSpinner.VERSION = 'current_version';
 
 	AccessibleSpinner.DEFAULTS = {
 		spinnerText: 'Loading...',

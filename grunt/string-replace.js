@@ -1,16 +1,15 @@
 module.exports = {
 	"version": {
 		"options": {
-			"patterns": [
+			"replacements": [
 				{
-					"match": "current_version",
+					"pattern": /current_version/g,
 					"replacement": "<%= pkg.version %>"
 				}
 			]
 		},
-		//"src": ["build/**/*.js"],
 		"files": [
-			{"expand": false, "flatten": false, "src": ["build/**/*.js"], "dest": ["build/**/*.js"]}
+			{"src": "build/scripts/accessible-spinner.js", "dest": "build/scripts/accessible-spinner.js"}
 		]
 	}
 };
