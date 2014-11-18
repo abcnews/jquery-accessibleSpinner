@@ -3,11 +3,8 @@ module.exports = {
 		"options": {
 			"preserveComments": "none"
 		},
-		"files": [{
-			"expand": true,
-			"cwd": "dist",
-			"src": "*.js",
-			"dest": "dist"
-      }]
+		files: {
+			'dist/accessible-spinner.min.js': ['src/scripts/accessible-spinner.js']
+		}
 	}
 };

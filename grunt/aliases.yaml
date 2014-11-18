@@ -6,13 +6,10 @@ default:
 dev:
  - 'clean'
  - 'jshint:js'
- - 'browserify:dev'
- - 'copy:static'
+ - 'copy:dev'
 
 build:
  - 'dev'
- - 'version' # adds version number to the JS files in build
- - 'browserify:prod'
+ - 'version'
  - 'uglify:prod'
- - 'copy:static'
  - 'copy:build'

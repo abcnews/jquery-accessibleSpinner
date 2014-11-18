@@ -1,9 +1,9 @@
 module.exports = {
-	"static": {
+	"dev": {
 		"files": [{
 			"expand": true,
 			"cwd": "src/",
-			"src": ["**/*", "!scripts/**"],
+			"src": ["**/*"],
 			"dest": "build/"
 		}]
 	},

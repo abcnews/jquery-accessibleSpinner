@@ -1,8 +1,5 @@
 domready(function () {
 
-	// install the plugin (installs on dom ready - jquery has loaded by then)
-	AccessibleSpinner.installPlugin();
-
 	// simulate loading content into immediate area
 	// this content is loaded immediately so we don't need to announce it
 	var spinner1 = $('#immediate').spinner({

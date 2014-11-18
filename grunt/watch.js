@@ -14,7 +14,7 @@ module.exports = {
 	},
 	"copy": {
 		"files": ["src/**/*", "!src/scripts/*"],
-		"tasks": "copy:static",
+		"tasks": "copy:dev",
 		"interrupt": true
 	},
 	"version": {

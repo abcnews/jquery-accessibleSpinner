@@ -9,13 +9,12 @@
 function AccessibleSpinner(element, options) {
 	this.element    =
 	this.$element   =
-	this.options    =
-	this._defaults  = null;
+	this.options    = null;
 
 	this.init(element, options);
 }
 
-AccessibleSpinner.VERSION = '0.1';
+AccessibleSpinner.VERSION = '0.0.1';
 
 AccessibleSpinner.DEFAULTS = {
 	spinnerText: 'Loading...',
@@ -58,14 +57,12 @@ AccessibleSpinner.prototype = {
 
 	// use for setting new options on the plugin (options can be changed between start/stop)
 	setOptions: function(newOptions) {
-		console.log('setting options', newOptions);
 		this.options = $.extend({}, this.options, newOptions);
 		this.setAccessibleSpinnerHtml();
 	},
 
 	// start the spinner spinning
 	start: function() {
-		console.log('START METHOD CALLED', this.$element.attr('id'), this.spinnerHtml);
 		this.$element.html(this.spinnerHtml);
 	},
 
@@ -108,13 +105,6 @@ function Plugin(arg1, methodOptions) {
 			method = arg1;
 		}
 
-		console.group('Plugin:');
-		console.log('id', $this.attr('id'));
-		console.log('method', method);
-		console.log('options', options);
-		console.log('this', this);
-		console.groupEnd();
-
 		if (!data && method === 'destroy') {
 			return;
 		}
@@ -153,7 +143,11 @@ AccessibleSpinner.installPlugin = function installPlugin() {
 	AccessibleSpinner.isPluginInstalled = true;
 };
 
-/* EXPORT */
+/* EXPORT OR INSTALL */
 
-module.exports = AccessibleSpinner;
+if (typeof module === 'undefined') {
+	AccessibleSpinner.installPlugin();
+} else {
+	module.exports = AccessibleSpinner;
+}
 
