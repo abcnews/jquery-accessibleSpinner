@@ -11,7 +11,7 @@ that the content has loaded.
 
 ## Dependencies
 
-* JQuery (cause it's a JQuery plugin)
+* JQuery ('cause it's a JQuery plugin)
 
 For development you'll need [Node.js](http://nodejs.org/download/) and the dependencies managed via package.json.
 
