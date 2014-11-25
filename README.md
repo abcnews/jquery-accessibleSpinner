@@ -40,7 +40,7 @@ you're ready.
 Once you've added the script (and installed it if you need to) you can instantiate the spinner like so:
 
 	var spinner1 = $('#loadHere').spinner();
-	var spinner2 = $('#loadHere').spinner({
+	var spinner2 = $('#OrLoadHere').spinner({
 		doAnnouncement: false
 	});
 
