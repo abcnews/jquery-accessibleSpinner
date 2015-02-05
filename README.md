@@ -15,16 +15,12 @@ that the content has loaded.
 
 For development you'll need [Node.js](http://nodejs.org/download/) and the dependencies managed via package.json.
 
-## Demo
-
-Take a look at the [demo page](build/demo.js) that is included in the project.
-
-**Note:** The styling for the demo page has been included more to show how the messaging and notifications work than for
-presentation. You'll want to do your own styling.
-
 ## Getting started
 
 AccessibleSpinner can be used in any browserify or AMD project out of the box. Just `require()` it.
+
+Built (minified and unminified) JS can be found in the dist folder and can be used without needing to build the project
+yourself.
 
 For global browser environments, you can use add one of the JavaScript files in the `dist` folder to your page.
 
@@ -96,7 +92,7 @@ Allows you to set options on the spinner after it has been instantiated. Useful 
 example if content is loaded immediately you might not announce but then if the content can be refreshed or changed
 via AJAX you might now want to announce.
 
-### Develop
+## Develop
 
 Run `npm install` to locally install Node package dependencies, then run the default `grunt` task which:
 
@@ -104,6 +100,17 @@ Run `npm install` to locally install Node package dependencies, then run the def
 * Starts up a development server in the build directory, running on [http://localhost:8000](http://localhost:8000)
 * Watches files under `src/` for changes, triggering partial development builds as required
 
+### Demo Page
+
+If you're running the default (or dev) grunt task, a demo page is built and can be browsed at [http://localhost:8000](http://localhost:8000).
+
+**Note:** The styling for the demo page has been included more to show how the messaging and notifications work than for
+presentation. You'll want to do your own styling.
+
 ### Build
 
 Run `grunt build` to build the project. This will create new versions of the js files in the dist folder.
+
+## Contributing
+
+In lieu of a formal styleguide, take care to maintain the existing coding style. Lint and test your code using the Grunt tasks included in the project (and described above).
