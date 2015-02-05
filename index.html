@@ -4,35 +4,115 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>accessible-spinner</title>
-	<link rel="stylesheet" href="demo.css">
+	<link rel="stylesheet" href="styles/demo.css">
+
+	<!-- syntax highlighting -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript">
+		SyntaxHighlighter.all()
+	</script>
+
 </head>
 <body>
 
-<h1>Test Page</h1>
-<p>This is a demo of the accessible-spinner plugin. It won't look anything like a spinner but it should give the idea.</p>
-<p>Take a look at the <a href="demo.js">JavaScript managing the spinners</a>.</p>
-<hr />
+	<section class="main">
 
-<h2>Content loaded immediately (with no alert)</h2>
-<div id="immediate"></div>
-<p>This is some more content</p>
-<hr/>
+		<header class="demo-header">
+			<h1>jQuery-accessibleSpinner demo page</h1>
+			<p>This is a demo of the accessible-spinner jQuery plugin.</p>
+			<p>The repo can be found at: <a href="https://github.com/abcnews/jquery-accessibleSpinner">https://github.com/abcnews/jquery-accessibleSpinner</a>.</p>
+		</header>
 
-<h2>Content loaded by user (with alert)</h2>
-<p><a href="#additional" id="moreContentLink">Load additional content</a>.</p>
-<div id="additional"></div>
-<p>More content.</p>
-<hr/>
 
-<h2>Immediate and then refresh</h2>
-<p><strong>This content is loaded immediately (with no alert) and then can be refreshed by the user (where we do need to alert)</strong></p>
-<a href="#immediate_refresh" id="immediate_refresh_link">Refresh</a>
-<div id="immediate_refresh"></div>
-<hr/>
+		<p>These won't look anything like a spinner but they should give you the idea.</p>
+		<p>The spinners will appear as light grey boxes like this:</p>
+		<div class="spinner"></div>
+		<p>And text that is read out to screen readers will look like this:</p>
+		<p class="accessibility">I will be read out to a screen reader but won't be visible on the screen.</p>
 
-<script src="https://rawgit.com/ded/domready/v0.3.0/ready.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="scripts/accessible-spinner.js"></script>
-<script src="demo.js"></script>
+
+		<p>Take a look at the <a href="demo.js">JavaScript managing the spinners</a>.</p>
+
+
+
+
+		<h2>Content loaded immediately (with no alerts)</h2>
+		<div id="immediate"></div>
+		<p>This is some more content</p>
+
+		<pre class="brush: js">
+// simulate loading content into immediate area
+// this content is loaded immediately so we don't need to announce it
+var spinner1 = $("#immediate").spinner({
+	doAnnouncement: false
+});
+spinner1.spinner("start");
+setTimeout(function() {
+	$("#immediate").append("&lt;p&gt;This is the immediate loaded content. This is it. It has loaded.&lt;/p&gt;");
+	spinner1.spinner("finish");
+}, 500);
+		</pre>
+
+
+
+
+		<h2>Content loaded by user (with alert)</h2>
+		<p><a href="#additional" id="moreContentLink">Load additional content</a>.</p>
+		<div id="additional"></div>
+		<p>More content.</p>
+<pre class="brush: js">
+	// simulate loading content into additional area
+	// this content is loaded by the user so we announce when it has loaded
+	var spinner2 = $("#additional").spinner();
+	$("#moreContentLink").click(function() {
+		spinner2.spinner("start");
+		setTimeout(function() {
+			$("#additional").append("&lt;p&gt;This is the additional loaded content. This is it. It has loaded.&lt;/p&gt;");
+			spinner2.spinner("finish");
+		}, 3000);
+		return false;
+	});
+</pre>
+
+
+
+		<h2>Content loaded immediately and then refreshed by the user</h2>
+		<p>This content is loaded immediately (with no alert) and then can be refreshed by the user (where we do need to alert).</p>
+		<a href="#immediate_refresh" id="immediate_refresh_link">Reload</a>
+		<div id="immediate_refresh"></div>
+<pre class="brush: js">
+	// simulate loading content into a third area (and allow it to be refreshed)
+	// this content is loaded immediately so we do not need to announce it
+	var spinner3 = $('#immediate_refresh').spinner({
+		doAnnouncement: false
+	});
+	spinner3.spinner('start');
+	setTimeout(function() {
+		$('#immediate_refresh').append('&lt;p&gt;This is the immediate loaded content. This is it. It has loaded.&lt;/p&gt;');
+		spinner3.spinner('finish');
+	}, 500);
+	// but if the user clicks the link to refresh the content we want to ask them to wait and then announce when it has loaded.
+	$('#immediate_refresh_link').click(function() {
+		spinner3.spinner('setOptions', {
+			doAnnouncement: true
+		});
+		spinner3.spinner('start');
+		setTimeout(function() {
+			$('#immediate_refresh').append('&lt;p&gt;This is the refreshed content. This is it. It has loaded.&lt;/p&gt;');
+			spinner3.spinner('finish');
+		}, 3000);
+		return false;
+	});
+</pre>
+
+		<script src="https://rawgit.com/ded/domready/v0.3.0/ready.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="scripts/accessible-spinner.js"></script>
+		<script src="demo.js"></script>
+
+	</section>
 </body>
 </html>
