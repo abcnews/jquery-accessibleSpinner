@@ -8,6 +8,7 @@
     "url": ""
   },
   "main": "src/scripts/accessible-spinner.js",
+  "license": "ISC",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-clean": "~0.5.0",

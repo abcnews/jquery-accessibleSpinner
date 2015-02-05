@@ -18,8 +18,6 @@
     "globals": {
         "$": false,
         "_": false,
-        "d3": false,
-        "ABC": false,
 	    "define": false
     },
     "smarttabs": true
