@@ -9,6 +9,8 @@ notifications for accessibility. When the spinner is added, it includes a messag
 content loads. Then when the content loads (or rather when the finish method is called) an aria status message announces
 that the content has loaded.
 
+Demo page: [http://abcnews.github.io/jquery-accessibleSpinner/](http://abcnews.github.io/jquery-accessibleSpinner/)
+
 ## Dependencies
 
 * JQuery ('cause it's a JQuery plugin)
@@ -109,8 +111,9 @@ presentation. You'll want to do your own styling.
 
 ### Build
 
-Run `grunt build` to build the project. This will create new versions of the js files in the dist folder.
+Run `grunt build` to build the project. This will create new versions of the js files in the dist folder and update
+the published demo page.
 
 ## Contributing
 
-In lieu of a formal styleguide, take care to maintain the existing coding style. Lint and test your code using the Grunt tasks included in the project (and described above).
+In lieu of a formal styleguide, take care to maintain the existing coding style. Lint your code using the Grunt tasks included in the project (and described above).
